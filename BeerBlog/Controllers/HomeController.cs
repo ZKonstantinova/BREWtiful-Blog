@@ -13,11 +13,11 @@ namespace BeerBlog.Controllers
             return View();
         }
 
-        public ActionResult Categories()
+        public ActionResult Sections()
         {
           
 
-            return RedirectToAction("List", "Article");
+            return RedirectToAction("List", "Category");
         }
 
         public ActionResult Places()

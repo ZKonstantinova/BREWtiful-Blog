@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -19,6 +18,11 @@ namespace BeerBlog.Models
         public string Content { get; set; }
 
         public string AuthorId { get; set; }
+
+        public int CategoryId { get; set; }
+        public List<Category> Categories { get; set; }
+
+        public ICollection<Article> Articles { get; set; }
 
     }
 }

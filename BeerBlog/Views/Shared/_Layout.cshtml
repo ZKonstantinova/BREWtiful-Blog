@@ -19,10 +19,20 @@
                 @Html.ActionLink("BREWtiful", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Sections", "ListCategories", "Section")</li>
-                    <li>@Html.ActionLink("Beer? Where?", "Places", "Home")</li>
-                </ul>
+            
+                   
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Sections", "ListSections", "Section")</li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button" aria-expanded="false">Beer? Where?<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Buy</a></li>
+                                <li><a href="#">Drink</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+             
 
                         @Html.Partial("_LoginPartial")
 </div>

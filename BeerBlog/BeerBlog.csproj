@@ -217,6 +217,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Section.cs" />
+    <Compile Include="Models\SectionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -297,6 +298,7 @@
     <Content Include="Views\Section\Delete.cshtml" />
     <Content Include="Views\Section\ListArticles.cshtml" />
     <Content Include="Views\Section\ListCategories.cshtml" />
+    <Content Include="Views\Section\ListSections.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

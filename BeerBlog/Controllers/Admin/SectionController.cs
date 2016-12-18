@@ -14,7 +14,7 @@ namespace BeerBlog.Controllers.Admin
         // GET: Section
         public ActionResult Index()
         {
-            return RedirectToAction("ListCategories");
+            return RedirectToAction("ListSections");
         }
 
         // GET: Section/List
@@ -24,7 +24,7 @@ namespace BeerBlog.Controllers.Admin
             {
                 var sections = database.Sections
                     .ToList();
-              //  ViewBag.ListOfSections = new SelectList(sections);
+              // ViewBag.ListOfSections = new SelectList(sections);
 
                 return View(sections);
             }
@@ -148,11 +148,25 @@ namespace BeerBlog.Controllers.Admin
             }
         }
 
-        public ActionResult ListCategories()
+        public ActionResult ListSections()
+        {
+            using (var database = new BlogDbContext())
+            {
+                var sections = database.Sections
+                    .Include(s => s.Categories)
+                    .OrderBy(s => s.Name)
+                    .ToList();
+
+                return View(sections);
+            }
+        }
+
+        public ActionResult ListCategories(int? sectionId)
         {
             using (var database = new BlogDbContext())
             {
                 var categories = database.Categories
+                    .Where(c => c.SectionId == sectionId)
                     .Include(c => c.Articles)
                     .OrderBy(c => c.Name)
                     .ToList();

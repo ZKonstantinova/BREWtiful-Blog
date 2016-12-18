@@ -1,0 +1,22 @@
+﻿@model List<BeerBlog.Models.Section>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var section in Model)
+        {
+            <div class="col-sm-6 text-center text-uppercase">
+                <p>
+                    <h2>
+                        @Html.ActionLink(string.Format($"{section.Name} ({section.Categories.Count})"),
+                        "ListCategories", "Section", new { @sectionId = section.Id }, null)
+                    </h2>
+                </p>
+            </div>
+        }
+    </div>
+</div>
+<hr />

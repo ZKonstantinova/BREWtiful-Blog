@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BeerBlog.Models;
 
 namespace BeerBlog.Controllers
 {
@@ -17,7 +19,7 @@ namespace BeerBlog.Controllers
         {
           
 
-            return RedirectToAction("List", "Category");
+            return View();
         }
 
         public ActionResult Places()
@@ -26,5 +28,7 @@ namespace BeerBlog.Controllers
 
             return View();
         }
+
+      
     }
 }
